@@ -25,9 +25,9 @@ body {
   color: var(--white);
   background-color: var(--green);
   line-height: 1.6;
-  body.menu-open {
-    overflow: hidden;
-  }
+}
+body.menu-open {
+  overflow: hidden;
 }
 
 h1,
@@ -39,10 +39,6 @@ h3 {
 a {
   text-decoration: none;
   color: inherit;
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 /* =========================
@@ -794,9 +790,20 @@ html {
 ========================= */
 
 .testimonials {
-  padding: 5rem 1.5rem 7rem; /* tighter entry, generous exit */
   background: url("assets/testimonials-bg.jpg") center/cover no-repeat;
-  padding: 6rem 2rem;
+  position: relative;
+  padding: 6rem 2rem 7rem;
+}
+
+/* =========================
+   TESTIMONIALS SECTION FIXES
+========================= */
+
+/* Ensure heading is above cards */
+.testimonials .fade-heading,
+.testimonials .gold-divider {
+  position: relative;
+  z-index: 3;
 }
 
 /* =========================
@@ -812,6 +819,8 @@ html {
 }
 
 .testimonial-card {
+  position: relative;
+  overflow: hidden;
   color: #ffffff;
   text-align: center;
   padding: 2.5rem 2rem;
@@ -905,13 +914,6 @@ html {
   max-width: 1400px;
   margin: auto;
   padding: 4rem 2rem;
-}
-
-.testimonials h2 {
-  font-size: 2.6rem;
-  font-weight: 500;
-  text-align: center;
-  margin-bottom: 1rem;
 }
 
 .gold-divider.center {
@@ -1076,15 +1078,6 @@ footer::before {
 .footer-contact a:hover,
 .footer-social a:hover {
   text-decoration: underline;
-}
-
-.footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  margin-top: 3rem;
-  padding-top: 1.5rem;
-  text-align: center;
-  font-size: 0.85rem;
-  color: #cccccc;
 }
 
 /* ================================
@@ -1341,11 +1334,6 @@ footer a:hover {
     font-size: 1.4rem;
   }
 }
-.fade-in {
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
 
 .fade-in.visible {
   opacity: 1;
@@ -1393,6 +1381,8 @@ footer a:hover {
   font-size: 2.6rem;
   text-align: center;
   margin-bottom: 1rem;
+  position: relative;
+  z-index: 3;
 }
 /* =========================
    BACK TO TOP BUTTON

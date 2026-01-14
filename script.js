@@ -1,90 +1,38 @@
-/* =========================
-   MOBILE NAV TOGGLE
-========================= */
+
+// Hamburger Menu Toggle Function
 function toggleMenu() {
   const nav = document.getElementById("navLinks");
   const burger = document.querySelector(".hamburger");
   const body = document.body;
 
   const isOpen = nav.classList.toggle("open");
-
   burger.classList.toggle("active");
   body.classList.toggle("menu-open");
   burger.setAttribute("aria-expanded", isOpen);
 }
 
-/* =========================
-   CLOSE MOBILE NAV ON LINK CLICK
-========================= */
-document.querySelectorAll(".nav-links a").forEach((link) => {
-  link.addEventListener("click", () => {
-    document.getElementById("navLinks").classList.remove("open");
-    document.querySelector(".hamburger").classList.remove("active");
-    document.body.classList.remove("menu-open");
-  });
-});
-
-/* =========================
-   ACTIVE NAV LINK ON SCROLL
-========================= */
-const sections = document.querySelectorAll("section[id], footer[id]");
-const navLinks = document.querySelectorAll(".nav-links a");
-
-function setActiveLink() {
-  let current = "";
-  const scrollPos = window.scrollY + window.innerHeight / 2;
-
-  sections.forEach((section) => {
-    const top = section.offsetTop;
-    const height = section.offsetHeight;
-
-    if (scrollPos >= top && scrollPos < top + height) {
-      current = section.getAttribute("id");
-    }
-  });
-
-  navLinks.forEach((link) => link.classList.remove("active"));
-
-  if (current) {
-    const activeLink = document.querySelector(
-      `.nav-links a[href="#${current}"]`
-    );
-    if (activeLink) activeLink.classList.add("active");
-  }
-
-  /* Force CONTACT active at bottom */
-  if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 5) {
-    navLinks.forEach((link) => link.classList.remove("active"));
-    navLinks[navLinks.length - 1].classList.add("active");
-  }
+// Apply event listener for hamburger click
+const hamburger = document.querySelector(".hamburger");
+if (hamburger) {
+  hamburger.addEventListener("click", toggleMenu);
 }
 
-window.addEventListener("scroll", setActiveLink);
-window.addEventListener("load", setActiveLink);
-
-/* =========================
-   NAVBAR SCROLL STATE
-========================= */
+// Handle scroll behavior for the navbar
 const navbar = document.querySelector(".navbar");
-
 function handleNavbarScroll() {
   if (window.scrollY > 50) {
-    navbar.classList.add("scrolled");
-    navbar.classList.remove("on-hero");
+    if (navbar) navbar.classList.add("scrolled");
+    if (navbar) navbar.classList.remove("on-hero");
   } else {
-    navbar.classList.add("on-hero");
-    navbar.classList.remove("scrolled");
+    if (navbar) navbar.classList.add("on-hero");
+    if (navbar) navbar.classList.remove("scrolled");
   }
 }
-
 window.addEventListener("scroll", handleNavbarScroll);
 window.addEventListener("load", handleNavbarScroll);
 
-/* =========================
-   FADE-IN OBSERVER
-========================= */
-const fadeElements = document.querySelectorAll(".fade-in");
-
+// Intersection Observer for fade-in effect (for Testimonial section)
+const fadeElements = document.querySelectorAll(".fade-in:not(.fade-heading)");
 const fadeObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
@@ -99,11 +47,8 @@ const fadeObserver = new IntersectionObserver(
 
 fadeElements.forEach((el) => fadeObserver.observe(el));
 
-/* =========================
-   HEADING FADE-IN OBSERVER
-========================= */
+// Intersection Observer for heading fade-in (for Testimonial heading)
 const headingElements = document.querySelectorAll(".fade-heading");
-
 const headingObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
@@ -115,32 +60,9 @@ const headingObserver = new IntersectionObserver(
   },
   { threshold: 0.3 }
 );
-
 headingElements.forEach((el) => headingObserver.observe(el));
 
-/* =========================
-   BACK TO TOP BUTTON
-========================= */
-const backToTop = document.getElementById("backToTop");
-
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 400) {
-    backToTop.classList.add("show");
-  } else {
-    backToTop.classList.remove("show");
-  }
-});
-
-backToTop.addEventListener("click", () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
-  });
-});
-
-/* =========================
-   STAR CLICK ANIMATION
-========================= */
+// Star-click animation (Testimonial section stars)
 document.querySelectorAll(".stars").forEach((stars) => {
   stars.addEventListener("click", () => {
     stars.classList.remove("animate");
@@ -148,3 +70,65 @@ document.querySelectorAll(".stars").forEach((stars) => {
     stars.classList.add("animate");
   });
 });
+
+// Define the sections for active nav link highlighting
+const sections = document.querySelectorAll("section[id]");
+const footer = document.querySelector("footer");
+
+// Intersection Observer for active nav link highlighting
+const navLinks = document.querySelectorAll('.nav-links a');
+
+function setActiveLink() {
+    let current = "";
+    const scrollPos = window.scrollY + window.innerHeight / 2;
+
+    sections.forEach((section) => {
+        const top = section.offsetTop;
+        const height = section.offsetHeight;
+
+        if (scrollPos >= top && scrollPos < top + height) {
+            current = section.getAttribute("id");
+        }
+    });
+
+    // Remove 'active' class from all nav links
+    navLinks.forEach((link) => link.classList.remove("active"));
+
+    // Add 'active' class to the correct nav link
+    if (current) {
+        const activeLink = document.querySelector(`.nav-links a[href="#${current}"]`);
+        if (activeLink) activeLink.classList.add("active");
+    }
+}
+
+// Adding scroll listener to call setActiveLink on scroll and load
+window.addEventListener("scroll", setActiveLink);
+window.addEventListener("load", setActiveLink);
+
+function setActiveLink() {
+    let current = "";
+    const scrollPos = window.scrollY + window.innerHeight / 2;
+
+    sections.forEach((section) => {
+        const top = section.offsetTop;
+        const height = section.offsetHeight;
+
+        if (scrollPos >= top && scrollPos < top + height) {
+            current = section.getAttribute("id");
+        }
+    });
+
+    // Check if footer is in view
+    if (footer && window.scrollY + window.innerHeight >= document.body.offsetHeight - 5) {
+        current = "contact";  // Force "Contact Me" link to be active
+    }
+
+    // Remove 'active' class from all nav links
+    navLinks.forEach((link) => link.classList.remove("active"));
+
+    // Add 'active' class to the correct nav link
+    if (current) {
+        const activeLink = document.querySelector(`.nav-links a[href="#${current}"]`);
+        if (activeLink) activeLink.classList.add("active");
+    }
+}
