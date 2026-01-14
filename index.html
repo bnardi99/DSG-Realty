@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/favicon/favicon-32x32.png?v=1"
+    />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daniela Salas Garcia | Chicago Real Estate</title>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- ==================================================
+     NAVIGATION
+================================================== -->
+    <header class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <a href="index.html" class="nav-logo-link">
+            <img
+              src="/assets/dgs-logo.png"
+              alt="DSG Logo"
+              class="nav-logo-img"
+            />
+          </a>
+        </div>
+
+        <nav class="nav-links" id="navLinks">
+          <a href="#about">About Me</a>
+          <a href="#accolades">Accolades</a>
+          <a href="#testimonials">Testimonials</a>
+          <a href="#contact">Contact Me</a>
+        </nav>
+
+        <div
+          class="hamburger"
+          onclick="toggleMenu()"
+          role="button"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </header>
+
+    <!-- ==================================================
+     HERO SECTION
+================================================== -->
+    <section class="hero section">
+      <video autoplay muted loop playsinline class="hero-video">
+        <source src="/assets/hero-video.mp4" type="video/mp4" />
+      </video>
+
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content fade-in">
+        <h1 class="hero-title">
+          <span class="hero-first">Daniela</span>
+          <span class="hero-last">Salas Garcia</span>
+        </h1>
+        <div class="hero-signature"></div>
+        <p class="hero-motto">Elevating Chicago Living, One Home at a Time</p>
+        <a href="#about" class="cta-primary">Meet Daniela</a>
+        <div class="hero-scroll-indicator">
+          <span></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hero to Bio Divider -->
+    <div class="section-divider"></div>
+
+    <!-- ==================================================
+     HERO → BIO TRANSITION
+================================================== -->
+    <section class="section-transition"></section>
+
+    <!-- ==================================================
+     BIO / ABOUT SECTION
+================================================== -->
+    <section class="bio section" id="about">
+      <div class="bio-overlay"></div>
+
+      <div class="bio-container">
+        <div class="bio-card fade-in">
+          <h2>Meet Daniela</h2>
+          <div class="gold-divider"></div>
+
+          <p>
+            Daniela Salas Garcia is a Chicago-based real estate professional
+            known for her client-first approach, strategic market insight, and
+            unwavering commitment to excellence.
+          </p>
+
+          <p>
+            With a deep understanding of Chicago’s diverse neighborhoods,
+            Daniela helps buyers and sellers navigate the real estate process
+            with confidence, clarity, and discretion.
+          </p>
+
+          <div class="bio-actions">
+            <a href="#contact" class="cta-secondary">Contact Daniela</a>
+            <a href="#" class="resume-link">View Resume</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+     ACCOLADES / ACHIEVEMENTS
+================================================== -->
+    <section class="accolades section" id="accolades">
+      <div class="accolades-container fade-in">
+        <span class="section-eyebrow">Accolades</span>
+        <h2>Proven Results</h2>
+        <div class="gold-divider center"></div>
+
+        <div class="accolades-grid">
+          <div class="accolade-card">
+            <div class="accolade-front">
+              <span class="accolade-number">120+</span>
+              <p class="accolade-label">Homes Sold</p>
+            </div>
+
+            <div class="accolade-back">
+              <p>
+                Successfully represented buyers and sellers across Chicago’s
+                most competitive neighborhoods.
+              </p>
+            </div>
+          </div>
+
+          <div class="accolade-card">
+            <div class="accolade-front">
+              <span class="accolade-number">$85M+</span>
+              <p class="accolade-label">Total Sales Volume</p>
+            </div>
+
+            <div class="accolade-back">
+              <p>
+                Successfully represented buyers and sellers across Chicago’s
+                most competitive neighborhoods.
+              </p>
+            </div>
+          </div>
+
+          <div class="accolade-card">
+            <div class="accolade-front">
+              <span class="accolade-number">10+</span>
+              <p class="accolade-label">Years Experience</p>
+            </div>
+
+            <div class="accolade-back">
+              <p>
+                Successfully represented buyers and sellers across Chicago’s
+                most competitive neighborhoods.
+              </p>
+            </div>
+          </div>
+
+          <div class="accolade-card">
+            <div class="accolade-front">
+              <span class="accolade-number">100%</span>
+              <p class="accolade-label">Client Satisfaction</p>
+            </div>
+
+            <div class="accolade-back">
+              <p>
+                Successfully represented buyers and sellers across Chicago’s
+                most competitive neighborhoods.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+     TESTIMONIALS SECTION
+================================================== -->
+    <section class="testimonials section" id="testimonials">
+      <div class="testimonials-overlay">
+        <div class="testimonials-container fade-in">
+          <div class="section-heading fade-heading">
+            <span class="section-eyebrow">Testimonials</span>
+            <h2>Client Feedback</h2>
+            <div class="gold-divider center"></div>
+          </div>
+          <div class="testimonials-grid">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-card glass fade-in">
+              <img
+                src="/assets/client-1.jpg"
+                alt="Client testimonial photo"
+                class="testimonial-img"
+              />
+              <h4>Emily R.</h4>
+              <div class="stars" role="button" aria-label="5 star rating">
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+              </div>
+              <p>
+                Daniela made the entire process effortless. Her attention to
+                detail and market knowledge truly set her apart.
+              </p>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="testimonial-card glass fade-in">
+              <img
+                src="/assets/client-2.jpg"
+                alt="Client testimonial photo"
+                class="testimonial-img"
+              />
+              <h4>Michael T.</h4>
+              <div class="stars" role="button" aria-label="5 star rating">
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+              </div>
+              <p>
+                Professional, responsive, and deeply knowledgeable. I would
+                recommend Daniela without hesitation.
+              </p>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="testimonial-card glass fade-in">
+              <img
+                src="/assets/client-3.jpg"
+                alt="Client testimonial photo"
+                class="testimonial-img"
+              />
+              <h4>Anthony L.</h4>
+              <div class="stars" role="button" aria-label="5 star rating">
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+              </div>
+              <p>
+                Daniela advocated for us every step of the way. The experience
+                was smooth, confident, and successful.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================
+     FOOTER / CONTACT SECTION
+================================================== -->
+    <footer class="footer section" id="contact">
+      <div class="footer-overlay">
+        <!-- Main Footer Content -->
+        <div class="footer-container fade-in">
+          <!-- Footer Brand -->
+          <div class="footer-brand">
+            <img
+              src="/assets/dgs-logo.png"
+              alt="Daniela Salas Garcia Logo"
+              class="footer-logo"
+            />
+            <p class="footer-tagline">Chicago Real Estate Advisor</p>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="footer-contact">
+            <h4>Get In Touch</h4>
+            <p>
+              Email: <a href="mailto:daniela@email.com">daniela@email.com</a>
+            </p>
+            <p>Phone: <a href="tel:+13125551234">(312) 555-1234</a></p>
+          </div>
+
+          <!-- Social Links -->
+          <div class="footer-social">
+            <h4>Connect</h4>
+            <a href="#">Instagram</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">Facebook</a>
+          </div>
+        </div>
+
+        <!-- Final CTA -->
+        <div class="footer-cta">
+          <h3>Ready to Make Your Next Move?</h3>
+          <a
+            href="https://forms.gle/zfPf1NBVzwLkzQFU8"
+            target="_blank"
+            rel="noopener"
+            class="footer-cta-btn"
+          >
+            Schedule a Consultation
+          </a>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="footer-bottom">
+          <p>© 2026 DSG. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" aria-label="Back to top">↑</button>
+
+    <!-- ==================================================
+     JAVASCRIPT
+     - Mobile Navigation
+     - Scroll-Based Navigation Highlighting
+     - Navbar Scroll State
+     - Fade-In & Heading Animations
+     - Back To Top Button
+     - Testimonial Star Animation
+================================================== -->
+    <script src="script.js"></script>
+  </body>
+</html>
